@@ -263,7 +263,7 @@ connectIfNeeded pool session =
         else do
             let (host, service) = sesServer session
             ais <- getAddrInfo (Just defaultHints { addrSocketType = Stream })
-                               (Just  host)
+                               (Just host)
                                (Just service)
             mSocket <- foldM (\mSocket ai -> do
                     case mSocket of
